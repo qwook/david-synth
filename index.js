@@ -89,12 +89,12 @@ $(document).ready(() => {
     // create the voices
 
     var voices = {
-      "78": "1.mp3",
-      "79": "2.mp3",
-      "80": "3.mp3",
-      "81": "4.mp3",
-      "82": "5.mp3",
-      "83": "6.mp3",
+      "65": "1.mp3",
+      "83": "2.mp3",
+      "68": "3.mp3",
+      "70": "4.mp3",
+      "71": "5.mp3",
+      "72": "6.mp3",
     }
 
     // solve();
@@ -104,6 +104,7 @@ $(document).ready(() => {
     function solve() {
       $("#lol").css({display: "none"});
       $("#bubbles").css({display: "block"});
+      $(".bubble").css({display: "block"});
 
       function randBgColor() {
 
@@ -165,7 +166,7 @@ $(document).ready(() => {
     }
 
     var passwordDudes = [];
-    var password = [0, 0, 0, 3, 2, 3, 2, 1, 0, 0, 0].map((x) => (x + 78));
+    var password = [65, 65, 65, 70, 68, 70, 68, 83, 65, 65, 65];
     var solving = true;
 
     class PasswordDude {
@@ -197,6 +198,7 @@ $(document).ready(() => {
     var keys = {}
 
     $("body").keydown((e) => {
+      console.log(e.which);
       if (!keys[e.which] && voices[e.which]) {
 
         $(".bubble").each((i, bubble) => {
@@ -230,7 +232,7 @@ $(document).ready(() => {
     // bubbles
     setInterval(() => {
       $(".bubble").each((i, bubble) => {
-        if (!bubble.vel) {
+        if (!bubble.pos) {
           bubble.pos = {x: Math.random() * 100, y: 100};
           bubble.vel = {x: (Math.random()-0.5)*2, y: -Math.random()}
         }
