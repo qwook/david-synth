@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>HI THERE</title>
+    <style type="text/css">
+        body {
+            font-family: "Courier New", monospace;
+            background: black;
+            color: red;
+            font-smoothing: none;
+            -webkit-font-smoothing: none;
+            padding: 50px;
+
+            transition: background 0.5s;
+        }
+
+        body, html {
+            overflow: hidden;
+        }
+
+        #yup, #yup2 {
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <p>LOADING... PLEASE WAIT</p>
+    </div>
+    <div id="lol">
+        <p>08/31/94&gt; Site ACTIVATED</p>
+        <p>11/01/16&gt; Biggest Regret: Being stuck on a girl for 2 years, who made me feel worthless.</p>
+        <p>11/02/16&gt; Little and Big program INITIATED</p>
+        <p>
+            $Enter the Password@&gt;
+        </p>
+    </div>
+
+    <div id="content">
+        <!-- this is where the root react component will get rendered -->
+    </div>
+    <div id="bubbles" style="display: none">
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+        <img class="bubble" src="./slideshow/bubble.png" />
+    </div>
+    <img id="yup" style="display: none" src="./slideshow/porter.png" />
+    <img id="yup2" style="display: none" src="./slideshow/porter.png" />
+
+    <!-- include the webpack-dev-server script so our scripts get reloaded when we make a change -->
+    <!-- we'll run the webpack dev server on port 8090, so make sure it is correct -->
+    <!-- <script src="/webpack-dev-server.js"></script> -->
+
+    <!-- include the bundle that contains all our scripts, produced by webpack -->
+    <!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:8090 -->
+    <script type="text/javascript" src="/bundle.js"></script>
+</body>
+</html>
